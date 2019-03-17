@@ -13,7 +13,7 @@ var path = require('path'),
   methodOverride = require("method-override"),
   GridFsStorage = require('multer-gridfs-storage'),
   passportLocalMongoose = require('passport-local-mongoose'),
-  config = require('./config.js');
+  
 
   app = express()
 
@@ -24,7 +24,7 @@ app.use(express.static("public/uploads"));
 app.use(express.static("public/img"));
 app.use(flash());
 let mongoURI;
-if(!process.env.DATABASEURL){mongoURI =config.dataurl;}
+if(!process.env.DATABASEURL){var config = require('./config.js');mongoURI =config.dataurl;}
 else{mongoURI =process.env.DATABASEURL;}
 mongoose.connect(mongoURI, { useNewUrlParser: true });
 
