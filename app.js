@@ -354,6 +354,6 @@ function checkOwner(req, res, next) {
   });
 }
 
-// app.listen(process.env.PORT, process.env.IP, () => { console.log("started"); });
-var port = 3005;
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(process.env.PORT, process.env.IP, () => { console.log("started"); });
+// var port = 3005;
+// app.listen(port, () => console.log(`Example app listening on port ${port}!`))
