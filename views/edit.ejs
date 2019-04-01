@@ -3,7 +3,7 @@
 
 <div class="container formdiv">
     <h1>Edit Missing Person</h1>
-    <img src="/image/<%= person.filename %>" alt="" width="300px">
+    <img class="formdiv-img" src="/image/<%= person.filename %>" alt="" width="300px">
     <form action="/person/<%= person._id %>?_method=PUT" method="POST">
         <div class="row">
             <div class="col">
