@@ -5,11 +5,11 @@
 /* ================= */
 
 body {
-  background-image: url("img/intro-bg-min.jpeg");
+  background-image: url("img/intro-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* padding-top: 30px; */
-  /* background-size: cover; */
+  background-size: cover;
   background-position: center center;
 }
 
