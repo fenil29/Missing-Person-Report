@@ -1,4 +1,5 @@
 var path = require("path"),
+  axios = require("axios"),
   crypto = require("crypto"),
   multer = require("multer"),
   express = require("express"),
@@ -381,8 +382,25 @@ function checkOwner(req, res, next) {
   });
 }
 
-app.listen(process.env.PORT, process.env.IP, () => {
-  console.log("started");
-});
+// app.listen(process.env.PORT, process.env.IP, () => {
+//   console.log("started");
+// });
 // var port = 3005;
 // app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+setInterval(function() {
+  axios.get('http://missing-person-report.herokuapp.com/')
+  .then(function (response) {
+   console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+    
+  });
+},300000);
+var port = 3000;
+if (process.env.PORT) {
+  app.listen(process.env.PORT, process.env.IP, () => {
+    console.log("started");
+  });
+} else
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`));
