@@ -28,6 +28,13 @@ app.use(express.static("public/uploads"));
 app.use(express.static("public/img"));
 app.use(flash());
 let mongoURI;
+let authenticationSecret;
+if (!process.env.AUTHENTICATIONSECRET) {
+  var config = require("./config.js");
+  authenticationSecret = config.authenticationSecret;
+} else {
+  authenticationSecret = process.env.AUTHENTICATIONSECRET;
+}
 if (!process.env.DATABASEURL) {
   var config = require("./config.js");
   mongoURI = config.dataurl;
@@ -42,7 +49,7 @@ const conn = mongoose.createConnection(mongoURI);
 //PASSPORT CONFIGURATION
 app.use(
   require("express-session")({
-    secret: "Crystal is something",
+    secret: authenticationSecret,
     resave: false,
     saveUninitialized: false
   })
