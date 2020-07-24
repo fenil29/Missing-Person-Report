@@ -1,6 +1,6 @@
 # Missing-Person-Report
 
-Web App that let you upload missing person details with photo and show all missing person details And also allow you to create account and edit and delete a person and watch all missing person 
+Web Application that shows all the missing persons. You can create an account and upload the missing person details with photos and so other people can help you.
 
 Technology used: HTML, CSS ,JavaScript, Bootstrap, jQuery, Node.js, Express.js, MongoDB
 
